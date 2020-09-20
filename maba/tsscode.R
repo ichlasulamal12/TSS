@@ -1,12 +1,10 @@
+# Contoh 1
 # Load package
-library(tidyverse)
 library(olsrr)
 library(car)
 library(lmtest)
-library(conf)
 library(ggfortify)
 
-# Contoh 1
 # Data yang digunakan
 X <- c(1.70, 1.00, 1.70, 2.80, 2.20, 0.80, 3.60, 1.10, 2.00, 2.60, 
        2.30, 0.90, 1.20, 3.40, 1.70, 2.50, 1.40, 3.30, 2.20, 1.50)
@@ -31,7 +29,6 @@ autoplot(model_fit)
 # Uji linearitas
 autoplot(model_fit, 1)
 crPlots(model_fit)
-
 # Uji normalitas residual
 autoplot(model_fit, 2)
 ols_plot_resid_hist(model_fit)
@@ -62,6 +59,12 @@ print(result)
 # Contoh 2
 # Mengatur direktori kerja
 setwd("D:/Dokumen/Undip/SC-SCSI/TSS Maba/2020/")
+
+library(tidyverse)
+library(olsrr)
+library(car)
+library(lmtest)
+library(ggfortify)
 
 # Load data yang digunakan
 income_data <- read_csv("income.data.csv")
@@ -127,4 +130,3 @@ income.graph
 pendapatan <- data.frame(income = 5)
 result <-  predict(income_mod, pendapatan)
 print(result)
-
