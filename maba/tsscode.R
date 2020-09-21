@@ -35,7 +35,6 @@ autoplot(model_fit, 2)
 ols_test_normality(model_fit)
 
 # Uji homoskedastisitas residual
-autoplot(model_fit, 3)
 ## menggunakan Breusch-Pagan Test
 bptest(model_fit)
 
