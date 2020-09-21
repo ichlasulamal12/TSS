@@ -1,3 +1,4 @@
+# install.packages(c("olsrr", "car", "lmtest", "ggfortify"))
 # Contoh 1
 # Load package
 library(olsrr)
@@ -6,10 +7,11 @@ library(lmtest)
 library(ggfortify)
 
 # Data yang digunakan
+
 X <- c(1.70, 1.00, 1.70, 2.80, 2.20, 0.80, 3.60, 1.10, 2.00, 2.60, 
        2.30, 0.90, 1.20, 3.40, 1.70, 2.50, 1.40, 3.30, 2.20, 1.50)
-Y <- c(33, 24, 27, 47, 35, 17, 52, 20, 38, 45, 
-       44, 19, 25, 50, 30, 43, 27, 50, 27, 28)
+Y <- c(33, 24, 27, 47, 35, 17, 57, 20, 38, 45, 
+       44, 19, 25, 55, 30, 43, 27, 53, 38, 28)
 
 # Ringkasan data
 summary(X)
@@ -27,11 +29,9 @@ summary(model_fit)
 autoplot(model_fit)
 
 # Uji linearitas
-autoplot(model_fit, 1)
 crPlots(model_fit)
 # Uji normalitas residual
 autoplot(model_fit, 2)
-ols_plot_resid_hist(model_fit)
 ols_test_normality(model_fit)
 
 # Uji homoskedastisitas residual
@@ -57,6 +57,7 @@ result <-  predict(model_fit, ukuranRumah)
 print(result)
 
 # Contoh 2
+# install.packages("tidyverse")
 # Mengatur direktori kerja
 setwd("D:/Dokumen/Undip/SC-SCSI/TSS Maba/2020/")
 
@@ -97,7 +98,6 @@ crPlots(income_mod)
 
 # Uji normalitas residual
 autoplot(income_mod, 2)
-ols_plot_resid_hist(income_mod)
 ols_test_normality(income_mod)
 
 # Uji homoskedastisitas residual
