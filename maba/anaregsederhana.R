@@ -76,7 +76,8 @@ summary(income_data)
 income_data %>%
   gather() %>%
   ggplot() +
-  geom_histogram(mapping = aes(x=value,fill=key), color="black") +
+  geom_histogram(mapping = aes(x=value,fill=key), 
+                 binwidth = 0.1, color="black") +
   facet_wrap(~ key, scales = "free") +
   theme_minimal() +
   theme(text = element_text(size=14))
@@ -117,7 +118,7 @@ income.graph<-
   geom_point() +
   geom_smooth(method="lm", col="black") +
   annotate(geom="text", x=2.8, y=7, 
-           label="Happiness = 0.2 + 0.71*Income") +
+           label="Happiness = 0.20427 + 0.71383*Income") +
   ggtitle("Reported happiness as a function of income") +
   theme(plot.title = element_text(hjust = 0.5)) +
   labs(x = "Income (x$10,000)",
